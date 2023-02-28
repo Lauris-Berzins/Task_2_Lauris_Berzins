@@ -163,11 +163,12 @@ header.mobile-header .nav-links a {
 header.mobile-header .nav-links a:hover {
     border-bottom: 4px solid orange;
 }
-
-header.mobile-header .nav-links .language {
+  
+header.mobile-header .nav-links .language ul{
     display: flex;
     gap: 4rem;
     margin: auto;
+    justify-content: center;
 }
 
 header.mobile-header .nav-links .language .selected {

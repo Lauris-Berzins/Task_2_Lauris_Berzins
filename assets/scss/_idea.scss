@@ -24,6 +24,39 @@
     }
 }
 .jurisimg {
-    padding-bottom: 100rem;
-    min-width: 1920px;
+    width: 100%;
 }
+
+
+.js_container{
+    width: 100%;
+    height: 20rem;
+
+    padding: 20rem;
+
+    align-items: center;
+
+    .drag_in{
+        background-color: red;
+        transition: 0.5;
+        transform: translateX(200rem);
+    }
+    
+    
+    .gray_out{
+    
+    }
+    
+    .gray_in{
+        
+    }
+
+    .quote_container{
+        width: 100%;
+
+        transform: translateX(-200rem);
+        
+    }
+}
+
+

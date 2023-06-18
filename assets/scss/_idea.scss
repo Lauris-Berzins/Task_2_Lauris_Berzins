@@ -1,62 +1,116 @@
 .idea-desc {
-    max-width: 60.6rem;
-    margin: 0 auto;
-    // position: relative;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:3rem 0 13rem 0;
     .desc-title {
-        align-items: center;
-        text-align: center;
-        font-family: "Montserrat", sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 4.8rem;
+      font-family: Oswald;
+      font-size: 4.8rem;
+      font-weight: 500;
+      line-height: 7rem;
+      letter-spacing: 0em;
+      text-align: center;
+      color: #2F4858;
     }
+  
     .d-text {
-        text-align: center;
-        padding: 5rem 0;
-        margin: 0;
-        font-family: "Montserrat", sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 1.8rem;
-        line-height: 2.2rem;
-        color: #2f4858;
+      max-width: 60.6rem;
+      font-family: Montserrat;
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 2.2rem;
+      letter-spacing: 0em;
+      text-align: center;
+      color: #2F4858;
     }
-}
-.jurisimg {
+  }
+
+
+.juris {
+    position: relative;
     width: 100%;
-}
+    overflow: hidden;
+  
+    img {
+      width: 100%;
+      display: block;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to bottom, rgba(47, 72, 88, 0.01), rgba(47, 72, 88, 1));
+      z-index: 1;
+    }
+      .text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 19%;
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35.57px;
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+    max-width: 60%;
+    margin: 0 auto;
+    }
+    .top {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    z-index: 2;
+    }
+
+    .bottom {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    z-index: 2;
+  }
+    
+  }
 
 
 .js_container{
-    width: 100%;
     height: 20rem;
 
     padding: 20rem;
 
     align-items: center;
 
-    .drag_in{
-        background-color: red;
-        transition: 0.5;
-        transform: translateX(200rem);
+    border: None;
+
+    .back_button{
+      transform: scaleX(-1);
     }
-    
-    
-    .gray_out{
-    
-    }
-    
-    .gray_in{
-        
-    }
+
 
     .quote_container{
         width: 100%;
-
         transform: translateX(-200rem);
-        
+
     }
 }
 
 
+.dragin{
+  transition: 2ms;
+  transform: translateX(200rem);
+}
+
+.dragout{
+  transition: 2ms;
+  transform: translateX(-200rem);
+}

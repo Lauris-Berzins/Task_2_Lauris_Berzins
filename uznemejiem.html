@@ -11,6 +11,7 @@
 
 <body>
   <header class="main-header">
+    <img src="assets/img/ripped-1.png" alt="ripped-1" class="header-image">
     <nav class="main-nav">
       <a href="index.html" class="logo">
         <img src="assets/img/BlackLogo-3.jpg" alt="BlackLogo-3" class="logo">
@@ -20,8 +21,6 @@
         <li><a href="piesaki_sapni.html">Piesaki Sapni</a></li>
         <li><a href="uznemejiem.html">Uzņēmējiem</a></li>
         <li><a href="sapnu_banka.html">Sapņu banka</a></li>
-        <li><a href="sapnus_atbalsta.html">Sapņus atbalsta</a></li>
-        <li><a href="99_Iedvesmas_stāsti.html">99 Iedvesmas stāsti</a></li>
         <li class="dropdown">
           <a href="#">LV</a>
           <ul>
@@ -34,6 +33,7 @@
     </nav>
   </header>
   <header class="mobile-header">
+    <img src="assets/img/ripped-1.png" alt="ripped-1" class="header-image">
     <nav class="main-nav">
       <a href="index.html" class="logo">
         <img src="assets/img/BlackLogo-3.jpg" alt="BlackLogo-3" class="logo">
@@ -54,31 +54,36 @@
       <li><a href="piesaki_sapni.html">Piesaki Sapni</a></li>
       <li><a href="uznemejiem.html">Uzņēmējiem</a></li>
       <li><a href="sapnu_banka.html">Sapņu banka</a></li>
-      <li><a href="sapnus_atbalsta.html">Sapņus atbalsta</a></li>
-      <li><a href="99_Iedvesmas_stāsti.html">99 Iedvesmas stāsti</a></li>
     </ul>
   </header>
-  <footer>
-      <div class="supporters">
-        <img class="sup-bg" src="assets/img/yellow-cut.png" alt="yellow-cut">
-        <div class="content">
-          <h5 class="sup-title">ATBALSTĪTĀJI</h5>
-          <div class="sup-logos">
-            <div class="sup-logo-container">
-              <img class="sup-logo" src="assets/img/getlogo-1.png" alt="getlogo-1">
-            </div>
-            <div class="sup-logo-container">
-              <img class="sup-logo" src="assets/img/SEM.png" alt="SEM">  
-            </div>
-            <div class="sup-logo-container">
-              <img class="sup-logo" src="assets/img/Citybee-logo-1.png" alt="Citybee-logo-1">
-            </div>
-            <div class="sup-logo-container">
-              <img class="sup-logo" src="assets/img/logo1-1.png" alt="logo1-1">
-            </div>
-          </div>
+
+  <div class="uznemejiem-container">
+    <h2 class="title">UZŅĒMĒJIEM</h2>
+    <p class="desc">
+      Ja ticat labākas pasaules attīstībai un vēlaties piedalīties starptautisku ideju realizēšanā, tad priecāsimies ar Jums iepazīties.
+    </p>
+  </div>
+
+  <div class="form uznemejiem-form">
+    <h3 class="form-title">PALĪDZI ĪSTENOT SAPNI!</h3>
+    <form>
+        <div class="form-group">
+            <input class="form-input form-name" type="text" placeholder="Vārds, Uzvārds*" required>
+            <input class="form-input form-email" type="email" placeholder="E-pasts*" required>
         </div>
-      </div>
+        <input class="form-input form-phone" type="text" placeholder="Telefons*" required>
+        <textarea class="form-input form-textarea" placeholder="Jautājums, vai komentārs*" required></textarea>
+        <label class="form-label">* obligāti aizpildāmie lauki</label>
+        <div class="form-tos">
+            <input class="form-checkbox" type="checkbox" required>
+            <label class="form-checkbox-label">Piekrītu, ka mani dati tiks izmantoti likumdošanā noteiktā kārtībā un
+                tiks saglabāti līdz brīdim, kamēr tas būs nepieciešams.</label>
+        </div>
+        <input class="btn form-btn" type="submit" value="Sūtīt">
+    </form>
+  </div>
+  
+  <footer>
       <div class="footer">
           <img class="footer-bg" src="assets/img/footer.png" alt="footer">
           <div class="footer-info">

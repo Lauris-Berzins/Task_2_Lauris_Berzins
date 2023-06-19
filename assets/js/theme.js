@@ -3,6 +3,9 @@ const mobileHeader = document.querySelector(".mobile-header");
 
 const backToTop = document.querySelector("#back-to-top");
 
+const dreambtn = document.querySelector('.dreambtn1');
+const form = document.querySelector('.form');
+
 document.addEventListener("scroll", function () {
   if (window.scrollY === 0) {
     if (backToTop.classList.contains("appear"))
@@ -31,3 +34,10 @@ hamburg.addEventListener("click", () => {
     hamburg.src = "assets/img/hamburger.svg";
   }
 })
+
+
+// Add a click event listener to the button
+dreambtn.addEventListener('click', () => {
+  // Scroll to the form element
+  form.scrollIntoView({ behavior: 'smooth' });
+});

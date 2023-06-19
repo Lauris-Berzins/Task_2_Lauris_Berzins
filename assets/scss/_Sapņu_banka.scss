@@ -1,0 +1,93 @@
+.cards{
+margin-bottom: 10rem;
+.card {
+    display: flex;
+    width: 65%;
+    margin: 5rem auto;
+    padding: 2rem;
+    gap: 5rem;
+    margin-bottom: 8rem;
+
+  
+    &:nth-child(odd) {
+        justify-content: flex-end;
+        align-items: center;
+        .desc {
+          text-align: start;
+          max-width: 50rem;
+        }
+      }
+    
+      &:nth-child(even) {
+        justify-content: flex-start;
+        align-items: center;
+        .desc {
+          text-align: end;
+          max-width: 50rem;
+        }
+      }
+
+    .card-image {
+      margin-right: 2rem;
+      align-items: center;
+    }
+  }
+}
+
+
+.yellow-section{
+    position: relative;
+    margin-bottom: 10rem;
+    padding: 10rem 0;
+
+  .yellow-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .yellow-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .scenery{
+        z-index: 2;
+        margin-bottom: 2rem;
+      }
+      
+    .large-desc{
+        color: white;
+        z-index: 2;
+        max-width: 80rem;
+    }
+  }
+}
+
+.dream-bank-container {
+    margin: 5rem 16rem 15rem 16rem;
+  
+    .dream-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      height: 30rem;
+      width: 100%;
+  
+      .dream-option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .large-desc{
+            max-width: 30rem;
+        }
+      }
+    }
+  }
+
+.dream-bank{
+    margin: -10rem 8rem 20rem 8rem;
+}

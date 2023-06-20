@@ -1,57 +1,37 @@
-var forward_button = document.querySelector(".forward_button");
-var back_button = document.querySelector(".back_button");
+const quotes = document.querySelectorAll('.quote');
+const back_button = document.querySelector('.back_button');
+const forward_button = document.querySelector('.forward_button');
 
-var paragraph1 = document.querySelector(".first_quote");
-var paragraph2 = document.querySelector(".second_quote");
-var paragraph3 = document.querySelector(".third_quote");
-var paragraph4 = document.querySelector(".forth_quote");
-var paragraph5 = document.querySelector(".f_quote");
+let currentIndex = 0;
 
-var variable_list = [paragraph1,paragraph2,paragraph3,paragraph4,paragraph5]
-
-let revolving = 0;
-
-
-forward_button.addEventListener("click", function() {
-    // Remove "dragin" and "dragout" classes from all paragraphs
-    for (let i = 0; i < variable_list.length; i++) {
-      variable_list[i].classList.remove("dragin", "dragout");
+function showCurrentQuote() {
+  for (let i = 0; i < quotes.length; i++) {
+    if (i === currentIndex) {
+      quotes[i].classList.add('active');
+    } else {
+      quotes[i].classList.remove('active');
     }
-  
-    // Add "dragout" class to the current paragraph
-    variable_list[revolving].classList.add("dragout");
-  
-    revolving++;
-    if (revolving >= variable_list.length) {
-      revolving = 0;
-    }
-  
-    // Add "dragin" class to the new paragraph
-    variable_list[revolving].classList.add("dragin");
-  
-    // Update the quote number
-    quoteNumber.textContent = revolving + 1;
-  });
-  
-  back_button.addEventListener("click", function() {
-    // Remove "dragin" and "dragout" classes from all paragraphs
-    for (let i = 0; i < variable_list.length; i++) {
-      variable_list[i].classList.remove("dragin", "dragout");
-    }
-  
-    // Add "dragout" class to the current paragraph
-    variable_list[revolving].classList.add("dragout");
-  
-    revolving--;
-    if (revolving < 0) {
-      revolving = variable_list.length - 1;
-    }
-  
-    // Add "dragin" class to the new paragraph
-    variable_list[revolving].classList.add("dragin");
-  
-    // Update the quote number
-    quoteNumber.textContent = revolving + 1;
-  });
+  }
+}
 
+function showNextQuote() {
+  currentIndex++;
+  if (currentIndex >= quotes.length) {
+    currentIndex = 0;
+  }
+  showCurrentQuote();
+}
 
+function showPreviousQuote() {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = quotes.length - 1;
+  }
+  showCurrentQuote();
+}
+
+forward_button.addEventListener('click', showNextQuote);
+back_button.addEventListener('click', showPreviousQuote);
+
+// Show the initial quote
+showCurrentQuote();

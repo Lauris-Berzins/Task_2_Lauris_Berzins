@@ -62,37 +62,61 @@
   }
 
 
-.js_container{
-    height: 20rem;
+  .js_container {
+    position: relative;
+    overflow: hidden;
+    height: 40rem;
+    
+  
+    .quote_container {
 
-    padding: 20rem;
-
-    align-items: center;
-
-    border: None;
-
-    .back_button{
-      transform: scaleX(-1);
+      justify-content: center;
+      align-items: center;
+      max-width: 60%;
+      margin: 10rem auto;
+      display: flex;
+      transition: transform 0.5s ease;
+      overflow-x: hidden;
     }
-
-
-    .quote_container{
-        width: 100%;
-        transform: translateX(-200rem);
-
+    .quote {
+      display: none;  // Hide all quotes by default
     }
-}
-
-
-.dragin{
-  transition: 2ms;
-  transform: translateX(200rem);
-}
-
-.dragout{
-  transition: 2ms;
-  transform: translateX(-200rem);
-}
+    
+    .quote.active {
+      display: block; // Show only the active/current quote
+    }
+  
+    .quote_list {
+      flex-shrink: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+  
+      &.active {
+        opacity: 1;
+      }
+  
+      li {
+        list-style: none;
+        text-align: center;
+  
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+  
+  .button_container {
+    position: absolute;
+    top: 50%;
+    margin-left: 20rem;
+    z-index: 1;
+    text-align: center;
+  }
 
 @media(max-width: 1200px) {
   .idea-desc{

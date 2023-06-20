@@ -60,27 +60,51 @@
 }
 
 .js_container {
-  height: 20rem;
-  padding: 20rem;
-  align-items: center;
-  border: None;
-}
-.js_container .back_button {
-  transform: scaleX(-1);
+  position: relative;
+  overflow: hidden;
+  height: 40rem;
 }
 .js_container .quote_container {
+  justify-content: center;
+  align-items: center;
+  max-width: 60%;
+  margin: 10rem auto;
+  display: flex;
+  transition: transform 0.5s ease;
+  overflow-x: hidden;
+}
+.js_container .quote {
+  display: none;
+}
+.js_container .quote.active {
+  display: block;
+}
+.js_container .quote_list {
+  flex-shrink: 0;
   width: 100%;
-  transform: translateX(-200rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.js_container .quote_list.active {
+  opacity: 1;
+}
+.js_container .quote_list li {
+  list-style: none;
+  text-align: center;
+}
+.js_container .quote_list li span {
+  display: block;
 }
 
-.dragin {
-  transition: 2ms;
-  transform: translateX(200rem);
-}
-
-.dragout {
-  transition: 2ms;
-  transform: translateX(-200rem);
+.button_container {
+  position: absolute;
+  top: 50%;
+  margin-left: 20rem;
+  z-index: 1;
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
@@ -233,6 +257,9 @@
   .photo-grid.dream-grid .photo-grid-item:nth-child(4) {
     grid-column: 41/101;
     grid-row: 1/2;
+  }
+  .dream-bank .register-container {
+    padding-bottom: 10rem;
   }
   .dream-bank .r-option h3 {
     margin-bottom: 10rem;

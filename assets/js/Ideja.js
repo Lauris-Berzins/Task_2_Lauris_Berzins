@@ -9,7 +9,7 @@ var paragraph5 = document.querySelector(".f_quote");
 
 var variable_list = [paragraph1,paragraph2,paragraph3,paragraph4,paragraph5]
 
-let revolving = 0
+let revolving = 0;
 
 
 forward_button.addEventListener("click", function() {

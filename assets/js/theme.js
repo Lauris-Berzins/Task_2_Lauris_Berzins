@@ -3,7 +3,9 @@ const mobileHeader = document.querySelector(".mobile-header");
 
 const backToTop = document.querySelector("#back-to-top");
 
-const dreambtn = document.querySelector('.dreambtn1');
+const dreambtn = document.querySelector('.dreambtn');
+const businessbtn = document.querySelector('.businessbtn');
+const dreambtn1 = document.querySelector('.dreambtn1');
 const form = document.querySelector('.form');
 
 document.addEventListener("scroll", function () {
@@ -19,7 +21,10 @@ document.addEventListener("scroll", function () {
 })
 
 backToTop.addEventListener("click", function (e) {
-  window.scroll({ top: 0, behavior: "smooth" });
+  window.scroll({
+    top: 0,
+    behavior: "smooth"
+  });
 })
 
 let clicked = false;
@@ -28,16 +33,22 @@ hamburg.addEventListener("click", () => {
   if (clicked) {
     mobileHeader.classList.add("clicked");
     hamburg.src = "assets/img/hamburgerexit.svg";
-  }
-  else {
+  } else {
     mobileHeader.classList.remove("clicked");
     hamburg.src = "assets/img/hamburger.svg";
   }
 })
 
+businessbtn.addEventListener('click', () => {
+  window.location.href = "uznemejiem.html";
+});
 
-// Add a click event listener to the button
 dreambtn.addEventListener('click', () => {
-  // Scroll to the form element
-  form.scrollIntoView({ behavior: 'smooth' });
+  if (dreambtn.classList.contains('dreambtn1')) {
+    form.scrollIntoView({
+      behavior: 'smooth'
+    });
+  } else {
+    window.location.href = "piesaki_sapni.html";
+  }
 });

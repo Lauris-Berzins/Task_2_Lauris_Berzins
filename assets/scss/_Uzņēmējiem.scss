@@ -1,6 +1,8 @@
-.uznemejiem-container{
+.uznemejiem-container {
     margin-bottom: 15rem;
-    .desc{
+    margin-top: 10rem;
+
+    .desc {
         max-width: 80rem;
         text-align: center;
         margin: auto;
@@ -9,4 +11,16 @@
 
 .form.uznemejiem-form {
     margin-bottom: 18rem;
+}
+
+@media(max-width:1200px) {
+    .uznemejiem-container {
+        .title {
+            font-weight: 600;
+        }
+
+        .desc {
+            max-width: 60rem;
+        }
+    }
 }

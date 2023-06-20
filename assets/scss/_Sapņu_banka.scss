@@ -1,6 +1,7 @@
-.cards{
-margin-bottom: 10rem;
-.card {
+.cards {
+  margin-bottom: 10rem;
+
+  .card {
     display: flex;
     width: 65%;
     margin: 5rem auto;
@@ -8,24 +9,26 @@ margin-bottom: 10rem;
     gap: 5rem;
     margin-bottom: 8rem;
 
-  
+
     &:nth-child(odd) {
-        justify-content: flex-end;
-        align-items: center;
-        .desc {
-          text-align: start;
-          max-width: 50rem;
-        }
+      justify-content: flex-end;
+      align-items: center;
+
+      .desc {
+        text-align: start;
+        max-width: 50rem;
       }
-    
-      &:nth-child(even) {
-        justify-content: flex-start;
-        align-items: center;
-        .desc {
-          text-align: end;
-          max-width: 50rem;
-        }
+    }
+
+    &:nth-child(even) {
+      justify-content: flex-start;
+      align-items: center;
+
+      .desc {
+        text-align: end;
+        max-width: 50rem;
       }
+    }
 
     .card-image {
       margin-right: 2rem;
@@ -34,11 +37,10 @@ margin-bottom: 10rem;
   }
 }
 
-
-.yellow-section{
-    position: relative;
-    margin-bottom: 10rem;
-    padding: 10rem 0;
+.yellow-section {
+  position: relative;
+  margin-bottom: 10rem;
+  padding: 10rem 0;
 
   .yellow-bg {
     position: absolute;
@@ -47,47 +49,129 @@ margin-bottom: 10rem;
     width: 100%;
     height: 100%;
   }
-  .yellow-content{
+
+  .yellow-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    .scenery{
-        z-index: 2;
-        margin-bottom: 2rem;
-      }
-      
-    .large-desc{
-        color: white;
-        z-index: 2;
-        max-width: 80rem;
+    .scenery {
+      z-index: 2;
+      margin-bottom: 2rem;
+    }
+
+    .large-desc {
+      color: white;
+      z-index: 2;
+      max-width: 80rem;
     }
   }
 }
 
 .dream-bank-container {
-    margin: 5rem 16rem 15rem 16rem;
-  
-    .dream-options {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      height: 30rem;
-      width: 100%;
-  
-      .dream-option {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+  margin: 5rem 16rem 15rem 16rem;
 
-        .large-desc{
-            max-width: 30rem;
-        }
+  .dream-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30rem;
+    width: 100%;
+
+    .dream-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .large-desc {
+        max-width: 30rem;
+      }
+    }
+  }
+}
+
+.dream-bank {
+  margin: -10rem 8rem 20rem 8rem;
+}
+
+@media(max-width:1200px) {
+  .yellow-section {
+    .yellow-content {
+      .large-desc {
+        max-width: 60rem;
       }
     }
   }
 
-.dream-bank{
-    margin: -10rem 8rem 20rem 8rem;
+  .dream-bank-container {
+    margin: 5rem 6rem 15rem 6rem;
+
+    .dream-options {
+      .dream-option {
+        img {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:850px) {
+  .cards {
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+
+      &:nth-child(odd) {
+        justify-content: center;
+        align-items: center;
+
+        .desc {
+          text-align: center;
+          max-width: 50rem;
+
+        }
+      }
+
+      &:nth-child(even) {
+        justify-content: center;
+        align-items: center;
+
+        .desc {
+          text-align: center;
+          max-width: 50rem;
+
+        }
+      }
+
+      img {
+        order: -1;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .dream-bank-container {
+
+    .dream-options {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      height: 30rem;
+      width: 100%;
+      margin-bottom: 40rem;
+      gap: 4rem;
+    }
+  }
+
+  .yellow-section {
+    .yellow-content {
+      img {
+        transform: scale(0.7);
+      }
+    }
+  }
+
 }

@@ -103,27 +103,32 @@
       </div>
     </div>
   </div>
+
   <div class="form">
     <h3 class="form-title">SAZINĀTIES AR MUMS</h3>
-    <form
-  action="https://formspree.io/f/xgebgbpz"
-  method="POST"
->
+    <form id="contact-form" action="https://formspree.io/f/xgebgbpz" method="POST">
       <div class="form-group">
-        <input class="form-input form-name" type="text" placeholder="Vārds, Uzvārds*" required>
-        <input class="form-input form-email" type="email" placeholder="E-pasts*" required>
+        <input class="form-input form-name" type="text" name="name" placeholder="Vārds, Uzvārds*">
+        <input class="form-input form-email" type="email" name="_replyto" placeholder="E-pasts*">
       </div>
-      <input class="form-input form-phone" type="text" placeholder="Telefons*" required>
-      <textarea class="form-input form-textarea" placeholder="Jautājums, vai komentārs*" required></textarea>
+      <input class="form-input form-phone" type="text" name="phone" placeholder="Telefons*">
+      <textarea class="form-input form-textarea" name="message" placeholder="Jautājums, vai komentārs*"></textarea>
       <label class="form-label">* obligāti aizpildāmie lauki</label>
       <div class="form-tos">
-        <input class="form-checkbox" type="checkbox" required>
+        <input class="form-checkbox" type="checkbox">
         <label class="form-checkbox-label">Piekrītu, ka mani dati tiks izmantoti likumdošanā noteiktā kārtībā un
           tiks saglabāti līdz brīdim, kamēr tas būs nepieciešams.</label>
       </div>
       <input class="btn form-btn" type="submit" value="Sūtīt">
     </form>
+    <p class="large-desc" id="thank-you-message1" style="display: none;">Paldies, ka sapņo!</p>
+    <p class="large-desc" id="thank-you-message2" style="display: none;">Ja Tavs sapnis tiks izvēlēts, mēs ar Tevi sazināsimies. </p>
+    <div class="error-modal" id="error-modal">
+      <p id="error-message"></p>
+      <button onclick="closeModal()">OK</button>
+    </div>
   </div>
+  
   <footer>
     <div class="supporters">
       <img class="sup-bg" src="assets/img/yellow-cut.png" alt="yellow-cut">
@@ -186,6 +191,7 @@
   </footer>
   <img src="assets/img/circle-arrow-up-solid.svg" alt="Back to Top" id="back-to-top">
   <script src="assets/js/theme.js"></script>
+  <script src="assets/js/form.js"></script>
 </body>
 
 </html>

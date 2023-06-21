@@ -1,17 +1,34 @@
-const quotes = document.querySelectorAll('.quote');
-const back_button = document.querySelector('.back_button');
-const forward_button = document.querySelector('.forward_button');
+const quotes = [
+  {
+    quote_title: 'Ken Ludden',
+    quote_position: 'Director, Margot Fonteyn Academy of Ballet',
+    quote_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi tempus imperdiet nulla malesuada pellentesque elit',
+  },
+  {
+    quote_title: 'John Doe',
+    quote_position: 'Some Position',
+    quote_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  },
+  {
+    quote_title: 'Jane Smith',
+    quote_position: 'Another Position',
+    quote_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  },
+];
 
 let currentIndex = 0;
 
+const quoteContainer = document.querySelector('.quote_container');
+const titleElement = document.querySelector('.quote_title');
+const positionElement = document.querySelector('.quote_position');
+const textElement = document.querySelector('.quote_text');
+
 function showCurrentQuote() {
-  for (let i = 0; i < quotes.length; i++) {
-    if (i === currentIndex) {
-      quotes[i].classList.add('active');
-    } else {
-      quotes[i].classList.remove('active');
-    }
-  }
+  const currentQuote = quotes[currentIndex];
+  // Update the DOM elements with the current quote information
+  titleElement.textContent = currentQuote.quote_title;
+  positionElement.textContent = currentQuote.quote_position;
+  textElement.textContent = currentQuote.quote_text;
 }
 
 function showNextQuote() {
@@ -29,6 +46,9 @@ function showPreviousQuote() {
   }
   showCurrentQuote();
 }
+
+const back_button = document.querySelector('.back_button');
+const forward_button = document.querySelector('.forward_button');
 
 forward_button.addEventListener('click', showNextQuote);
 back_button.addEventListener('click', showPreviousQuote);

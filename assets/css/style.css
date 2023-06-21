@@ -59,52 +59,58 @@
   z-index: 2;
 }
 
-.js_container {
-  position: relative;
-  overflow: hidden;
-  height: 40rem;
-}
-.js_container .quote_container {
-  justify-content: center;
-  align-items: center;
-  max-width: 60%;
-  margin: 10rem auto;
+.quote_container {
   display: flex;
-  transition: transform 0.5s ease;
-  overflow-x: hidden;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+  width: 50vw;
+  margin: 0 auto; /* Center the container horizontally */
 }
-.js_container .quote {
-  display: none;
-}
-.js_container .quote.active {
-  display: block;
-}
-.js_container .quote_list {
-  flex-shrink: 0;
+.quote_container .quote_content {
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  flex-direction: column;
 }
-.js_container .quote_list.active {
-  opacity: 1;
+.quote_container .quote_content .quote_title {
+  text-align: left;
+  font-family: Montserrat;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 3.6rem;
+  letter-spacing: 0em;
+  color: #2F4858;
 }
-.js_container .quote_list li {
-  list-style: none;
-  text-align: center;
+.quote_container .quote_content .quote_position {
+  font-family: Montserrat;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2F4858;
+  margin-top: -1rem;
 }
-.js_container .quote_list li span {
-  display: block;
+.quote_container .quote_content .quote_text {
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 3rem;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2F4858;
+  height: 10rem;
 }
-
-.button_container {
-  position: absolute;
-  top: 50%;
-  margin-left: 20rem;
-  z-index: 1;
-  text-align: center;
+.quote_container .button_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 3rem; /* Adjust the margin as needed */
+}
+.quote_container .back_button {
+  margin-right: 5rem;
+  transform: scaleX(-1); /* Adjust the space between the buttons */
 }
 
 @media (max-width: 1200px) {
@@ -116,6 +122,9 @@
   }
   .juris .text-overlay {
     padding-bottom: 4.5rem;
+  }
+  .quote_container {
+    width: 70vw;
   }
 }
 @media (max-width: 850px) {
@@ -137,6 +146,21 @@
   }
   .juris::before {
     bottom: 0;
+  }
+  .quote_container {
+    height: 90vh;
+    width: 90vw;
+  }
+  .quote_container .quote_content .quote_text {
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 2.5rem;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2F4858;
+    height: 15rem;
   }
 }
 .dream-container {
@@ -751,7 +775,9 @@ header.mobile-header .hamburger-container #hamburger {
 .form {
   text-align: center;
   margin-top: 5rem;
-  margin-bottom: 13rem;
+  margin-bottom: 3rem;
+  min-height: calc(100vh - 13rem); /* Adjust the value as needed */
+  padding-bottom: 8rem;
 }
 .form .form-title {
   font-family: "Oswald";
@@ -862,6 +888,51 @@ header.mobile-header .hamburger-container #hamburger {
   color: #2f4858;
   text-align: left;
   margin-left: 2.1rem;
+}
+.form #thank-you-message1 {
+  display: none;
+  margin-top: 6rem;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  color: #FFA800;
+}
+.form #thank-you-message2 {
+  display: none;
+  margin-top: 3rem;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: #FFA800;
+}
+.form .error-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ffa800;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: none;
+  border-radius: 45px;
+  z-index: 5;
+}
+.form .error-modal p {
+  color: #ffa800;
+}
+.form .error-modal button {
+  background-color: #ffa800;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+}
+.form .error-modal button:hover {
+  background-color: #ff8c00;
 }
 
 footer .supporters {

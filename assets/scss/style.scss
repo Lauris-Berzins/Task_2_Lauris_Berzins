@@ -380,7 +380,9 @@ header.mobile-header {
 .form {
   text-align: center;
   margin-top: 5rem;
-  margin-bottom: 13rem;
+  margin-bottom: 3rem;
+  min-height: calc(100vh - 13rem); /* Adjust the value as needed */
+  padding-bottom: 8rem;
 
   .form-title {
     font-family: "Oswald";
@@ -500,6 +502,57 @@ header.mobile-header {
         color: #2f4858;
         text-align: left;
         margin-left: 2.1rem;
+      }
+    }
+  }
+
+  #thank-you-message1 {
+    display: none;
+    margin-top: 6rem;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    color: #FFA800; 
+
+  }
+  #thank-you-message2 {
+    display: none;
+    margin-top: 3rem;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: #FFA800;
+  }
+  
+  .error-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ffa800;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: none;
+    border-radius: 45px;
+    z-index: 5;
+  
+    p {
+      color: #ffa800;
+    }
+  
+    button {
+      background-color: #ffa800;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 25px;
+  
+      &:hover {
+        background-color: #ff8c00;
       }
     }
   }

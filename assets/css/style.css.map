@@ -65,7 +65,7 @@
   justify-content: center;
   height: 70vh;
   width: 50vw;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto;
 }
 .quote_container .quote_content {
   width: 100%;
@@ -106,11 +106,11 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin-top: 3rem; /* Adjust the margin as needed */
+  margin-top: 3rem;
 }
 .quote_container .back_button {
   margin-right: 5rem;
-  transform: scaleX(-1); /* Adjust the space between the buttons */
+  transform: scaleX(-1);
 }
 
 @media (max-width: 1200px) {

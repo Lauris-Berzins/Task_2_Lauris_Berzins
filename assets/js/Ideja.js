@@ -18,14 +18,14 @@ const quotes = [
 
 let currentIndex = 0;
 
-const quoteContainer = document.querySelector('.quote_container');
-const titleElement = document.querySelector('.quote_title');
-const positionElement = document.querySelector('.quote_position');
-const textElement = document.querySelector('.quote_text');
+const carousel = document.querySelector('.carousel');
+const quoteContainer = carousel.querySelector('.quote_container');
+const titleElement = quoteContainer.querySelector('.quote_title');
+const positionElement = quoteContainer.querySelector('.quote_position');
+const textElement = quoteContainer.querySelector('.quote_text');
 
 function showCurrentQuote() {
   const currentQuote = quotes[currentIndex];
-  // Update the DOM elements with the current quote information
   titleElement.textContent = currentQuote.quote_title;
   positionElement.textContent = currentQuote.quote_position;
   textElement.textContent = currentQuote.quote_text;
@@ -36,7 +36,12 @@ function showNextQuote() {
   if (currentIndex >= quotes.length) {
     currentIndex = 0;
   }
-  showCurrentQuote();
+
+  setTimeout(() => {
+  
+    showCurrentQuote();
+  
+  }, 300);
 }
 
 function showPreviousQuote() {
@@ -44,11 +49,16 @@ function showPreviousQuote() {
   if (currentIndex < 0) {
     currentIndex = quotes.length - 1;
   }
-  showCurrentQuote();
+
+  setTimeout(() => {
+
+    showCurrentQuote();
+
+  }, 300);
 }
 
-const back_button = document.querySelector('.back_button');
-const forward_button = document.querySelector('.forward_button');
+const back_button = carousel.querySelector('.back_button');
+const forward_button = carousel.querySelector('.forward_button');
 
 forward_button.addEventListener('click', showNextQuote);
 back_button.addEventListener('click', showPreviousQuote);
